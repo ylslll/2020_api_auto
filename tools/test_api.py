@@ -46,7 +46,7 @@ class TestApiTray(unittest.TestCase):
             MyLog().error("测试获取到的结果是：{0}".format(res.json()))
 
     def tearDown(self):
-        MyLog().info("-----------------测试结束-----------------")
+        MyLog().info("-----------------测试结束------------------")
 
 if __name__ == '__main__':
     re=TestApiTray().test_api
