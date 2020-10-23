@@ -50,7 +50,7 @@ class TestApiTray(unittest.TestCase):
         time.sleep(3)
 
     def tearDown(self):
-        MyLog().info("-----------------测试结束------------------")
+        MyLog().info("-----------------测试结束-------------------")
 
 if __name__ == '__main__':
     re=TestApiTray().test_api
