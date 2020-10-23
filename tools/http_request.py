@@ -1,12 +1,12 @@
 import requests
 from tools.GetData import *
-import json
+
 class HttpRequest():
 
     def http_request(self, host, url, method, data):
         headers = {"content-type": "application/json;charset=utf-8", "token": getattr(GetData, "Token")}
         URL = "{0}{1}".format(host, url)
-        # data=data.encode('utf-8')
+        data=data.encode('utf-8')
         try:
             if method.lower() == "post":
                 re = requests.post(URL, data, headers=headers)

@@ -7,6 +7,7 @@ from tools.read_conf import ReadConf
 from tools.http_request import HttpRequest
 from tools.GetData import *
 import re
+import time
 
 
 # 获取测试数据
@@ -46,6 +47,7 @@ class TestApiTray(unittest.TestCase):
         finally:
             ReadTestData().write_result(test_data_tray_path, item["sheet_name"], item["case_id"]+1, res.json(), test_result)
             MyLog().error("测试获取到的结果是：{0}".format(res.json()))
+        time.sleep(3)
 
     def tearDown(self):
         MyLog().info("-----------------测试结束------------------")
