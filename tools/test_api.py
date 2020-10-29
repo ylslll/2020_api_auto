@@ -50,6 +50,7 @@ class TestApiTray(unittest.TestCase):
             # 将替换后的data写入到excel中
             ReadTestData().write_rely_on_data(filename=test_data_tray_path, sheet_name=item['sheet_name'], case_id=item['case_id'], replace_datas=item['data'])
 
+        # 注册接口，查询数据库获取验证码
         if item['url'] == '/api/api/user/register':
             mobile = getattr(GetData, 'mobilephone')
             data1 = json.loads(item['data'])
@@ -59,13 +60,6 @@ class TestApiTray(unittest.TestCase):
             data1['verifyCode'] = verifyCode
             item['data'] = json.dumps(data1)
             ReadTestData().write_rely_on_data(filename=test_data_tray_path, sheet_name=item['sheet_name'], case_id=item['case_id'], replace_datas=item['data'])
-
-
-
-
-
-
-
 
         # 执行
         res = HttpRequest().http_request(host, url=item["url"], data=item["data"], method=item["method"])

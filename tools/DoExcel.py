@@ -98,10 +98,10 @@ class ReadTestData():
                 sheet = wb[data['sheet_name']]
                 read_data = json.loads(data['data'])
                 # 获取11位的手机号
-                random_mobile = '1'
+                random_mobile = '15'
                 # 获取对应的行号
                 column = int(data['case_id']) + 1
-                for k in range(10):
+                for k in range(9):
                     random_mobile += str(k)
                 # 通过数据库查询随机生成的手机号是否已注册
 
