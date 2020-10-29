@@ -110,28 +110,41 @@ class ReadTestData():
                     wb.save(filename)
                     return read_data
 
-
+    # 创建读取结果方法，用于获取依赖接口的result
     def read_result(self, filename, sheet_name, case_id,rely_on_value):
         wb = load_workbook(filename)
         sheet = wb[sheet_name]
         test_data = self.read_test_data(filename)
-        #定义一个空列表接收对应sheet的数据
+        # 定义一个空列表接收对应sheet的数据
         sheet_test_data = []
         for sheet_data in test_data:
             if sheet_data['sheet_name'] == sheet_name:
                 sheet_test_data.append(sheet_data)
-        #将rely_on_value存在一个列表中
+        # 将rely_on_value存在一个列表中
         rely_on_value = str(rely_on_value)
         rely_on_value_list = rely_on_value.split(',')
-        #定义空字典接收数据
+        # 定义空字典接收数据
         result_dict = {}
         for data in sheet_test_data:
             if data['case_id'] == case_id:
                 result = eval(data['result'])
                 for k in rely_on_value_list:
                     result_dict[k] = result['data'][k]
-        #返回为字典格式
+        # 返回为字典格式
         return result_dict
+
+    # 创建写入data方法，用于依赖接口替换字段值后将data重新写入excel，便于查看此次请求的数据
+    def write_rely_on_data(self, filename, sheet_name, case_id, replace_datas):
+        wb = load_workbook(filename)
+        sheet = wb[sheet_name]
+        test_data = self.read_test_data(filename)
+        for data in test_data:
+            if data['case_id'] == case_id:
+                sheet.cell(case_id+1, 5).value = replace_datas
+                wb.save(filename)
+                # return sheet.cell(case_id+1, 5).value
+
+
 
 
 
@@ -143,9 +156,10 @@ class ReadTestData():
 if __name__ == '__main__':
     # re1 = ReadTestData().read_test_data('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
     # re2 = ReadTestData().write_customer_name('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
-    re3 = ReadTestData().write_deff_telephone('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
-    re4 = ReadTestData().read_result('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx','web_sign_up_in',1,'random,verificationId')
-    print(re4)
+    # re3 = ReadTestData().write_deff_telephone('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
+    # re4 = ReadTestData().read_result('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx', 'web_sign_up_in',1,'random,verificationId')
+    re5 = ReadTestData().write_rely_on_data('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx', 'web_sign_up_in', 2, '{"locationX": 97.0, "mobile": "15666253644", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "3fd301e7-db78-40b7-93ed-229f48b4fe4d"}')
+    print(re5)
 
 
 

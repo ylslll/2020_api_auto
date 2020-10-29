@@ -46,6 +46,8 @@ class TestApiTray(unittest.TestCase):
                 request_data[k] = v
             item['data'] = json.dumps(request_data)
             # 将替换后的data写入到excel中
+            ReadTestData().write_rely_on_data(filename=test_data_tray_path, sheet_name=item['sheet_name'], case_id=item['case_id'], replace_datas=item['data'])
+
 
 
 
