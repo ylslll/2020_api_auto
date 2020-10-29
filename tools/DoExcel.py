@@ -4,6 +4,7 @@ from tools.read_conf import ReadConf
 from tools.random_chinese import GBK2312
 import json
 from tools.mysql import MysqlCon
+from tools.GetData import *
 
 
 
@@ -98,6 +99,8 @@ class ReadTestData():
                 read_data = json.loads(data['data'])
                 # 获取11位的手机号
                 random_mobile = '1'
+                # 获取对应的行号
+                column = int(data['case_id']) + 1
                 for k in range(10):
                     random_mobile += str(k)
                 # 通过数据库查询随机生成的手机号是否已注册
@@ -107,10 +110,12 @@ class ReadTestData():
                     self.write_deff_telephone(filename)
                 else:
                     read_data['mobile'] = random_mobile
+                    sheet.cell(column, 5).value = json.dumps(read_data)
                     wb.save(filename)
-                    return read_data
+                    # 将此随机手机号返回存储，供下一接口调用
+                    setattr(GetData, 'mobilephone', random_mobile)
 
-    # 创建读取结果方法，用于获取依赖接口的result
+    # 创建读取结果方法，用于获取依赖接口的result，此处case_id指的是所依赖的用例id
     def read_result(self, filename, sheet_name, case_id,rely_on_value):
         wb = load_workbook(filename)
         sheet = wb[sheet_name]
@@ -156,10 +161,11 @@ class ReadTestData():
 if __name__ == '__main__':
     # re1 = ReadTestData().read_test_data('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
     # re2 = ReadTestData().write_customer_name('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
-    # re3 = ReadTestData().write_deff_telephone('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
+    re3 = ReadTestData().write_deff_telephone('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx')
     # re4 = ReadTestData().read_result('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx', 'web_sign_up_in',1,'random,verificationId')
-    re5 = ReadTestData().write_rely_on_data('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx', 'web_sign_up_in', 2, '{"locationX": 97.0, "mobile": "15666253644", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "3fd301e7-db78-40b7-93ed-229f48b4fe4d"}')
-    print(re5)
+    # re5 = ReadTestData().write_rely_on_data('C:\\Users\\17826\\PycharmProjects\\2020_api_auto\\test_data\\test_tray.xlsx', 'web_sign_up_in', 2, '{"locationX": 97.0, "mobile": "15666253644", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "3fd301e7-db78-40b7-93ed-229f48b4fe4d"}')
+    a = getattr(GetData,'mobilephone')
+    print(re3,a)
 
 
 

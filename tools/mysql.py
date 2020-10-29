@@ -28,6 +28,7 @@ class MysqlCon():
             return mysql_result
 
 if __name__ == '__main__':
-    a = MysqlCon().select('SELECT * FROM t_tray_customer_company WHERE id=7','test_ly_tray_basicdata')
-    print(type(a), a[0], len(a))
+    a = MysqlCon().select('SELECT verification_code FROM t_verification_code WHERE created_by="10123456789" ORDER BY id DESC LIMIT 1','test_yelo_basicdata')
+    print(a)
+    print(type(a), type(a[0][0]), len(a))
 

@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>接口测试报告</h1>
-<p class='attribute'><strong>Start Time:</strong> 2020-10-29 11:13:33</p>
-<p class='attribute'><strong>Duration:</strong> 0:00:03.618111</p>
-<p class='attribute'><strong>Status:</strong> Pass 1 Failure 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2020-10-29 16:33:52</p>
+<p class='attribute'><strong>Duration:</strong> 0:00:11.142755</p>
+<p class='attribute'><strong>Status:</strong> Pass 3</p>
 
 <p class='description'>云盘接口测试</p>
 </div>
@@ -221,13 +221,13 @@ function showOutput(id, name) {
     <td>View</td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>tools.test_api.TestApiTray</td>
-    <td>2</td>
-    <td>1</td>
-    <td>1</td>
+    <td>3</td>
+    <td>3</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c1',2)">Detail</a></td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c1',3)">Detail</a></td>
 </tr>
 
 <tr id='pt1.1' class='hiddenRow'>
@@ -254,38 +254,46 @@ pt1.1:
     </td>
 </tr>
 
-<tr id='ft1.2' class='none'>
-    <td class='failCase'><div class='testcase'>test_api_2</div></td>
+<tr id='pt1.2' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_2</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.2')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.2')" >
+        pass</a>
 
-    <div id='div_ft1.2' class="popup_window">
+    <div id='div_pt1.2' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.2').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.2').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.2: Traceback (most recent call last):
-  File "C:\Users\17826\AppData\Local\Programs\Python\Python36\lib\site-packages\ddt.py", line 182, in wrapper
-    return func(self, *args, **kwargs)
-  File "C:\Users\17826\PycharmProjects\2020_api_auto\tools\test_api.py", line 81, in test_api
-    raise e
-  File "C:\Users\17826\PycharmProjects\2020_api_auto\tools\test_api.py", line 76, in test_api
-    self.assertEqual(item["expected"], res.json()["errcode"])
-AssertionError: 0 != 10022
-Traceback (most recent call last):
-  File "C:\Users\17826\AppData\Local\Programs\Python\Python36\lib\site-packages\ddt.py", line 182, in wrapper
-    return func(self, *args, **kwargs)
-  File "C:\Users\17826\PycharmProjects\2020_api_auto\tools\test_api.py", line 81, in test_api
-    raise e
-  File "C:\Users\17826\PycharmProjects\2020_api_auto\tools\test_api.py", line 76, in test_api
-    self.assertEqual(item["expected"], res.json()["errcode"])
-AssertionError: 0 != 10022
+pt1.2: 
 
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+</tr>
+
+<tr id='pt1.3' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_api_3</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.3')" >
+        pass</a>
+
+    <div id='div_pt1.3' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.3').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt1.3: 
 
         </pre>
     </div>
@@ -296,9 +304,9 @@ AssertionError: 0 != 10022
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
-    <td>1</td>
-    <td>1</td>
+    <td>3</td>
+    <td>3</td>
+    <td>0</td>
     <td>0</td>
     <td>&nbsp;</td>
 </tr>

@@ -10,6 +10,7 @@ import re
 import time
 from tools.get_locationX import getLocationX
 import json
+from tools.mysql import MysqlCon
 
 
 # 获取测试数据
@@ -41,6 +42,7 @@ class TestApiTray(unittest.TestCase):
                 locationX = getLocationX(float(result_data['random']))
                 result_data.pop('random')
                 result_data['locationX'] = locationX
+                ReadTestData().write_deff_telephone(filename=test_data_tray_path)
             request_data = json.loads(item['data'])
             for k, v in result_data.items():
                 request_data[k] = v
@@ -48,7 +50,15 @@ class TestApiTray(unittest.TestCase):
             # 将替换后的data写入到excel中
             ReadTestData().write_rely_on_data(filename=test_data_tray_path, sheet_name=item['sheet_name'], case_id=item['case_id'], replace_datas=item['data'])
 
-
+        if item['url'] == '/api/api/user/register':
+            mobile = getattr(GetData, 'mobilephone')
+            data1 = json.loads(item['data'])
+            data1['mobile'] = mobile
+            select_result = MysqlCon().select('SELECT verification_code FROM t_verification_code WHERE created_by=%s ORDER BY id DESC LIMIT 1'%mobile, 'test_yelo_basicdata')
+            verifyCode = select_result[0][0]
+            data1['verifyCode'] = verifyCode
+            item['data'] = json.dumps(data1)
+            ReadTestData().write_rely_on_data(filename=test_data_tray_path, sheet_name=item['sheet_name'], case_id=item['case_id'], replace_datas=item['data'])
 
 
 
