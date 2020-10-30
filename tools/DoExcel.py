@@ -5,6 +5,7 @@ from tools.random_chinese import GBK2312
 import json
 from tools.mysql import MysqlCon
 from tools.GetData import *
+import datetime
 
 
 
@@ -98,11 +99,18 @@ class ReadTestData():
                 sheet = wb[data['sheet_name']]
                 read_data = json.loads(data['data'])
                 # 获取11位的手机号
-                random_mobile = '15'
+                random_mobile_header = '1'
                 # 获取对应的行号
                 column = int(data['case_id']) + 1
-                for k in range(9):
-                    random_mobile += str(k)
+                date = datetime.date.today()
+                date = str(date)
+                year = date.split('-')[0]
+                day = date.split('-')[2]
+                time = str(datetime.datetime.now())
+                time1 = time.split(' ')[1]
+                hour = time1.split(':')[0]
+                mints = time1.split(':')[1]
+                random_mobile = random_mobile_header + year + day + hour + mints
                 # 通过数据库查询随机生成的手机号是否已注册
 
                 select_result_tele = MysqlCon().select("SELECT ID, AES_DECRYPT(UNHEX(user_account),'1W5hoD!qU^5&L#Ix') FROM t_account WHERE AES_DECRYPT(UNHEX(user_account),'1W5hoD!qU^5&L#Ix')='%s'"%random_mobile,'test_yelo_basicdata')
@@ -114,6 +122,7 @@ class ReadTestData():
                     wb.save(filename)
                     # 将此随机手机号返回存储，供下一接口调用
                     setattr(GetData, 'mobilephone', random_mobile)
+        return random_mobile
 
     # 创建读取结果方法，用于获取依赖接口的result，此处case_id指的是所依赖的用例id
     def read_result(self, filename, sheet_name, case_id,rely_on_value):

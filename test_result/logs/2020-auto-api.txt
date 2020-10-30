@@ -31,3 +31,64 @@
 2020-10-29 17:37:20,393-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"mobile": "15012345678", "email": "", "verifyCode": "673833", "password": "Aa123456", "checkPassword": "Aa123456"}
 2020-10-29 17:37:20,439-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'userAccount': '15012345678', 'token': 'eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2MDM5NzE0MzksInN1YiI6IuS5kOWMu-S6keebmOezu-e7n-W5s-WPsCIsImFwcElkIjoiMiIsInVzZXJJZCI6NDk2NiwidXNlck5hbWUiOiIiLCJuaWNrTmFtZSI6IjE1MDEyMzQ1Njc4IiwidXNlckNvZGUiOiJUT0tFTl9UUkFZX0NVU1RPTUVSX1dFQl9jMWUzZGI5M2FmNTE0MDQ0ODI2ZDcxZjZiODMzNTFiOCJ9.CRukcKdJu8e5sPP0ntAv_WZl6WpzpD0g5v2wmEkZ-Tx8rbzw9NYdcY5XT6GhZFwgR7YOXxwUro0VAHJFotDIyiWDqbxIptDDkNX6F0eNkdrwJ8m1hMZ9vJSMten_kxRkv-yADzQVvDqFci2m42eRPLlAAJjCEUGu7nWqpWnu1E0', 'skipPageStatus': '1'}, 'errmsg': 'ok'}
 2020-10-29 17:37:23,439-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 09:30:16,401-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 09:30:16,402-INFO-my_log.py-2020_api_auto-日志信息:执行用例1注册_获取图片滑动随机值
+2020-10-30 09:30:17,527-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{}
+2020-10-30 09:30:17,591-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'random': '0.7257954379795069', 'verificationId': '8924015b-4253-4e27-8b4a-9e85d1ad291f'}, 'errmsg': 'ok'}
+2020-10-30 09:30:20,591-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 09:30:20,592-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 09:30:20,593-INFO-my_log.py-2020_api_auto-日志信息:执行用例2注册_获取验证码
+2020-10-30 09:50:33,780-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 09:50:33,781-INFO-my_log.py-2020_api_auto-日志信息:执行用例1注册_获取图片滑动随机值
+2020-10-30 09:50:37,142-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{}
+2020-10-30 09:50:37,195-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'random': '0.6496158654663367', 'verificationId': '6cd89cf7-2f51-4120-809f-bc40622831d8'}, 'errmsg': 'ok'}
+2020-10-30 09:50:40,195-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 09:50:40,196-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 09:50:40,196-INFO-my_log.py-2020_api_auto-日志信息:执行用例2注册_获取验证码
+2020-10-30 09:50:47,555-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"locationX": 138.0, "mobile": "15012345678", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "6cd89cf7-2f51-4120-809f-bc40622831d8"}
+2020-10-30 09:50:47,556-INFO-my_log.py-2020_api_auto-日志信息:执行用例失败啦0 != 10022
+2020-10-30 09:50:47,601-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 10022, 'data': None, 'errmsg': '该账号已存在'}
+2020-10-30 09:50:47,602-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 09:50:47,604-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 09:50:47,604-INFO-my_log.py-2020_api_auto-日志信息:执行用例3注册成功
+2020-10-30 09:50:47,758-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:55:36,899-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:55:36,900-INFO-my_log.py-2020_api_auto-日志信息:执行用例1注册_获取图片滑动随机值
+2020-10-30 10:55:37,259-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{}
+2020-10-30 10:55:37,308-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'random': '0.7281603441475217', 'verificationId': '19daaf9d-73e7-4470-9e97-0828419ac0c4'}, 'errmsg': 'ok'}
+2020-10-30 10:55:40,310-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:55:40,310-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:55:40,311-INFO-my_log.py-2020_api_auto-日志信息:执行用例2注册_获取验证码
+2020-10-30 10:55:40,866-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"locationX": 149.0, "mobile": "12020301054", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "19daaf9d-73e7-4470-9e97-0828419ac0c4"}
+2020-10-30 10:55:40,911-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': True, 'errmsg': 'ok'}
+2020-10-30 10:55:43,912-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:55:43,912-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:55:43,913-INFO-my_log.py-2020_api_auto-日志信息:执行用例3注册成功
+2020-10-30 10:55:44,011-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:57:10,276-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:57:10,278-INFO-my_log.py-2020_api_auto-日志信息:执行用例1注册_获取图片滑动随机值
+2020-10-30 10:57:10,739-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{}
+2020-10-30 10:57:10,848-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'random': '0.6567442572033407', 'verificationId': '3b5b48b9-4903-4d10-8807-8bb73395d9c1'}, 'errmsg': 'ok'}
+2020-10-30 10:57:13,850-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:57:13,851-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:57:13,852-INFO-my_log.py-2020_api_auto-日志信息:执行用例2注册_获取验证码
+2020-10-30 10:57:14,805-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"locationX": 139.0, "mobile": "12020301054", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "3b5b48b9-4903-4d10-8807-8bb73395d9c1"}
+2020-10-30 10:57:14,929-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': True, 'errmsg': 'ok'}
+2020-10-30 10:57:17,931-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:57:17,932-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:57:17,933-INFO-my_log.py-2020_api_auto-日志信息:执行用例3注册成功
+2020-10-30 10:58:51,972-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:58:51,973-INFO-my_log.py-2020_api_auto-日志信息:执行用例1注册_获取图片滑动随机值
+2020-10-30 10:58:52,248-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{}
+2020-10-30 10:58:52,297-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'random': '0.5225744521829614', 'verificationId': 'aedf7084-05d4-45a1-802c-2ca18dc7d178'}, 'errmsg': 'ok'}
+2020-10-30 10:58:55,297-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:58:55,298-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:58:55,299-INFO-my_log.py-2020_api_auto-日志信息:执行用例2注册_获取验证码
+2020-10-30 10:58:55,650-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"locationX": 119.0, "mobile": "12020301058", "email": "", "source": "2", "type": "1", "verificationType": "4", "verificationId": "aedf7084-05d4-45a1-802c-2ca18dc7d178"}
+2020-10-30 10:58:55,703-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': True, 'errmsg': 'ok'}
+2020-10-30 10:58:58,704-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
+2020-10-30 10:58:58,705-INFO-my_log.py-2020_api_auto-日志信息:-----------------开始测试-----------------
+2020-10-30 10:58:58,706-INFO-my_log.py-2020_api_auto-日志信息:执行用例3注册成功
+2020-10-30 10:58:59,182-INFO-my_log.py-2020_api_auto-日志信息:接收到的测试数据{"mobile": "12020301058", "email": "", "verifyCode": "232432", "password": "Aa123456", "checkPassword": "Aa123456"}
+2020-10-30 10:58:59,227-ERROR-my_log.py-2020_api_auto-日志信息:测试获取到的结果是：{'errcode': 0, 'data': {'userAccount': '12020301058', 'token': 'eyJhbGciOiJSUzI1NiJ9.eyJleHAiOjE2MDQwMzM5MzcsInN1YiI6IuS5kOWMu-S6keebmOezu-e7n-W5s-WPsCIsImFwcElkIjoiMiIsInVzZXJJZCI6NDk3MywidXNlck5hbWUiOiIiLCJuaWNrTmFtZSI6IjEyMDIwMzAxMDU4IiwidXNlckNvZGUiOiJUT0tFTl9UUkFZX0NVU1RPTUVSX1dFQl8xNWI1ZGRkOWI5YmU0N2NlOTA0YzhlNjhjMWJkYjMzYyJ9.IyfNIBZ8htMkMMkX-7UbxNKQqKA9GtOwPoefm-vk9xugzfxXiRPFaVMlxLdXEpmeIEhTvV6M8uM4dOELl6oqKrJ31EwiUdnxqLGryAHgqElm1nR1qItDDdNqEyoPfEsgd9QreiW2QMqQfiCVy4j4AqebwqiAAtvwUUKGRWZVKwc', 'skipPageStatus': '1'}, 'errmsg': 'ok'}
+2020-10-30 10:59:02,228-INFO-my_log.py-2020_api_auto-日志信息:-----------------测试结束-------------------
